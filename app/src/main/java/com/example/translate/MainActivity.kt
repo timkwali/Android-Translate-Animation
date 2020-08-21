@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
     private fun translate() {
         val container = image.parent as ViewGroup
         val containerH = container.height
-        val animator = ObjectAnimator.ofFloat(image, View.TRANSLATION_Y, containerH.toFloat())
+        val imageH = image.height
+        val animator = ObjectAnimator.ofFloat(image, View.TRANSLATION_Y, (containerH - imageH).toFloat())
         animator.repeatCount = 1
         animator.repeatMode = ObjectAnimator.REVERSE
         animator.duration = 1000
